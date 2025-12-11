@@ -403,42 +403,56 @@ footer {
 /* --- 10. Responsive & Mobile --- */
 @media screen and (max-width: 768px) {
     
-    /* Global */
-    .container {
-        padding: 50px 5%; /* Moins de padding sur mobile */
-    }
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    
-    /* Navigation et Hero (pour s'assurer que les éléments ne sont pas trop grands) */
+    /* 1. Assurer que la NAV BAR elle-même est compacte */
     .navbar {
-        padding: 15px 5%;
-    }
-    .hero {
-        height: auto; /* Permet au Hero de s'adapter au contenu */
-        padding: 100px 5%;
-    }
-    .hero-content {
-        padding: 20px;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hero h2 {
-        font-size: 1.4rem;
-    }
-    .cta-group {
-        display: flex;
-        flex-direction: column; /* Empile les boutons */
-        gap: 10px;
-    }
-    .btn {
-        width: 100%; /* Boutons pleine largeur */
+        padding: 15px 5%; /* Réduire le padding vertical sur mobile */
     }
 
-    /* ********* Adaptation de la Timeline (Crucial) ********* */
+    /* 2. Afficher le menu burger et cacher les liens par défaut */
+    .burger {
+        display: block;
+        z-index: 1010; /* Assurez-vous qu'il est au-dessus du menu déployé */
+    }
+    
+    .nav-links {
+        /* Styles de base pour cacher le menu à droite de l'écran */
+        position: fixed; /* Utiliser fixed plutôt qu'absolute pour éviter les problèmes de scroll */
+        right: 0;
+        top: 0; /* Important : aligner en haut de la fenêtre */
+        height: 100vh; /* Prendre toute la hauteur de l'écran */
+        width: 70%; /* Une largeur raisonnable pour un menu latéral */
+        background-color: var(--color-dark); /* Utiliser une couleur sombre du thème */
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centrer les liens verticalement */
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    /* Style des liens dans le menu mobile */
+    .nav-links li {
+        margin: 20px 0; /* Espacement vertical des liens */
+        opacity: 0;
+    }
+    
+    .nav-links li a {
+        color: #fff; /* Texte blanc sur fond sombre */
+        font-size: 1.2rem;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* 3. Ajustement du Logo pour qu'il soit bien visible */
+    .logo {
+        font-size: 1.5rem; /* Réduire la taille du logo si nécessaire */
+    }
+
+    /* (Le reste de vos media queries comme l'adaptation de la Timeline doit suivre ici) */
+        /* ********* Adaptation de la Timeline (Crucial) ********* */
     
     /* Positionne la ligne de la timeline à gauche */
     .timeline::after {
@@ -474,15 +488,18 @@ footer {
         /* ... (styles du menu burger) ... */
     }
 }
-/* Animation Burger (À ajouter si non présent) */
+/* Animation Burger (pour la transformation en croix) */
+.burger div {
+    transition: all 0.3s ease;
+}
+
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
-
 .toggle .line2 {
     opacity: 0;
 }
-
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
+}
 }
