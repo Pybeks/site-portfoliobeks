@@ -1,0 +1,478 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1. Thème Couleurs Cyber/Cloud */
+:root {
+    --color-primary: #00bcd4;
+    /* Cyan/Aqua - Cloud/Accent */
+    --color-secondary: #0e1f3f;
+    /* Bleu Marine - Sécurité/Fondation */
+    --color-dark: #1c2c47;
+    /* Gris-bleu foncé */
+    --color-text: #333;
+    --color-light-bg: #f7f9fc;
+    --color-shadow: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-light-bg);
+}
+
+/* --- 2. Navigation & Logo Thème --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #fff;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    /* Couleur sombre */
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    color: var(--color-primary);
+    /* Bouclier en Cyan */
+    margin-right: 8px;
+    font-size: 1.6rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-text);
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--color-primary);
+    /* Accent Cyan au survol */
+}
+
+/* --- 3. Section Hero (Cloud Background) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Gradient doux évoquant le ciel/cloud, avec une touche de sécurité */
+    background: linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ajout d'un effet 'Code' pour l'aspect technique */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Overlay subtil de pattern de sécurité/code */
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZjdmOWZjIj48L3JlY3Q+PHBhdGggZD0iTTAgMGwyMCAyME0yMCAwbC0yMCAyMCIgc3Ryb2tlPSJyZ2JhKDEsMTMsNDEsLjA0KSIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9zdmc+') repeat;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Fond semi-transparent pour le texte */
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    /* Titre en Cyan/Cloud */
+    margin-bottom: 15px;
+}
+
+.hero .tagline {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.btn-secondary {
+    background-color: var(--color-dark);
+    color: #fff;
+    border-color: var(--color-dark);
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+/* --- 4. Sections Communes & Titres --- */
+.container {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    color: var(--color-secondary);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    /* Ligne d'accentuation Cyan */
+    border-radius: 2px;
+}
+
+.bg-light {
+    background-color: #f0f3f8;
+}
+
+/* --- 5. À propos / Compétences --- */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skills-container {
+    margin-top: 40px;
+    border-top: 2px solid #eee;
+    padding-top: 30px;
+}
+
+.skills-container h3 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills-tags {
+    text-align: center;
+}
+
+.skills-tags span {
+    display: inline-block;
+    background: var(--color-dark);
+    color: #fff;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-family: 'Source Code Pro', monospace;
+    /* Police technique */
+    transition: background 0.3s;
+}
+
+.skills-tags span:hover {
+    background: var(--color-primary);
+    color: var(--color-dark);
+}
+
+
+/* --- 6. Expérience (Timeline) --- */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--color-primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--color-dark);
+    border: 4px solid var(--color-primary);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--color-shadow);
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    color: #777;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.timeline-content ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.timeline-content ul li {
+    margin-bottom: 5px;
+}
+
+
+/* --- 7. Certifications --- */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.cert-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--color-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--color-shadow);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.cert-card h3 {
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.cert-card .date {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.education-list {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.education-list h3 {
+    color: var(--color-secondary);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.edu-item {
+    padding: 15px;
+    border-left: 4px solid var(--color-primary);
+    background-color: #fff;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 8. Contact --- */
+.contact-section {
+    background-color: var(--color-secondary);
+    /* Fond sombre pour la section contact */
+    color: #fff;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.contact-links .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-color: var(--color-primary);
+}
+
+/* Inverser les styles des boutons pour le fond sombre */
+.contact-links .btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.contact-links .btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.contact-links .btn-secondary:hover {
+    background-color: #fff;
+    color: var(--color-dark);
+}
+
+/* --- 9. Footer --- */
+footer {
+    background: var(--color-dark);
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+/* --- 10. Responsive & Mobile --- */
+@media screen and (max-width: 768px) {
+
+    /* ... (Code responsive existant pour la navigation mobile) ... */
+    /* Ajustement de la Timeline pour mobile */
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0%;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+        margin-left: 0;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* Animation Burger (À ajouter si non présent) */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
