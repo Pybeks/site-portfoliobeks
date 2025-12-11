@@ -1,14 +1,14 @@
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+    const navLinks = document.querySelectorAll('.nav-links li a'); // SÉLECTIONNE LES LIENS
 
     burger.addEventListener('click', () => {
         // Toggle Nav
         nav.classList.toggle('nav-active');
 
         // Animation des liens
-        navLinks.forEach((link, index) => {
+        document.querySelectorAll('.nav-links li').forEach((link, index) => { // NOTE: on itère sur les <li>
             if (link.style.animation) {
                 link.style.animation = '';
             } else {
@@ -18,6 +18,19 @@ const navSlide = () => {
 
         // Animation du burger
         burger.classList.toggle('toggle');
+    });
+
+    // NOUVEAU : Fermer le menu après avoir cliqué sur un lien mobile
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+            
+            // Assurez-vous que les <li> n'ont plus d'animation pour le prochain clic
+            document.querySelectorAll('.nav-links li').forEach(li => {
+                li.style.animation = '';
+            });
+        });
     });
 }
 
