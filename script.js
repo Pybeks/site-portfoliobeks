@@ -20,13 +20,13 @@ const navSlide = () => {
         burger.classList.toggle('toggle');
     });
 
-    // NOUVEAU : Fermer le menu après avoir cliqué sur un lien mobile
+    // Fermer le menu après avoir cliqué sur un lien mobile
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('nav-active');
             burger.classList.remove('toggle');
             
-            // Assurez-vous que les <li> n'ont plus d'animation pour le prochain clic
+            // animation pour le prochain clic
             document.querySelectorAll('.nav-links li').forEach(li => {
                 li.style.animation = '';
             });
