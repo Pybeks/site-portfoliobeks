@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* 1. Thème Couleurs Cyber/Cloud */
+/* 1. Thème Couleurs */
 :root {
     --color-primary: #00bcd4;
     /* Cyan/Aqua - Cloud/Accent */
@@ -25,7 +25,7 @@ body {
     background-color: var(--color-light-bg);
 }
 
-/* --- 2. Navigation & Logo Thème --- */
+/* Navigation & Logo Thème  */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -72,20 +72,20 @@ body {
     /* Accent Cyan au survol */
 }
 
-/* --- 3. Section Hero (Cloud Background) --- */
+/* --- 3. Section Hero  --- */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Gradient doux évoquant le ciel/cloud, avec une touche de sécurité */
+    /* Gradient  */
     background: linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 100%);
     position: relative;
     overflow: hidden;
 }
 
-/* Ajout d'un effet 'Code' pour l'aspect technique */
+/* Ajout d'un effet 'Code' */
 .hero::before {
     content: '';
     position: absolute;
@@ -294,7 +294,6 @@ body {
     box-shadow: 0 5px 15px var(--color-shadow);
 }
 
-/* ... (le reste du style de .timeline-content est conservé) ... */
 
 /* --- 7. Certifications --- */
 .certs-grid {
@@ -407,14 +406,14 @@ footer {
     /* 1. Assurer que la NAV BAR elle-même est compacte */
     .navbar {
         padding: 15px 5%;
-        /* Réduire le padding vertical sur mobile */
+        
     }
 
     /* 2. Afficher le menu burger et cacher les liens par défaut */
     .burger {
         display: block;
         z-index: 1010;
-        /* Assurez-vous qu'il est au-dessus du menu déployé */
+    
     }
 
     .nav-links {
@@ -423,7 +422,7 @@ footer {
         /* Utiliser fixed plutôt qu'absolute pour éviter les problèmes de scroll */
         right: 0;
         top: 0;
-        /* Important : aligner en haut de la fenêtre */
+        /* alignement en haut de la fenêtre */
         height: 100vh;
         /* Prendre toute la hauteur de l'écran */
         width: 70%;
@@ -460,11 +459,9 @@ footer {
     /* 3. Ajustement du Logo pour qu'il soit bien visible */
     .logo {
         font-size: 1.5rem;
-        /* Réduire la taille du logo si nécessaire */
+    
     }
 
-    /* (Le reste de vos media queries comme l'adaptation de la Timeline doit suivre ici) */
-    /* ********* Adaptation de la Timeline (Crucial) ********* */
 
     /* Positionne la ligne de la timeline à gauche */
     .timeline::after {
