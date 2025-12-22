@@ -531,3 +531,76 @@ footer {
     }
 
 }
+
+/* --- Styles Section Projets --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px var(--color-shadow);
+    transition: transform 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.project-info h3 {
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    background: #e0f7fa;
+    color: var(--color-dark);
+    padding: 5px 12px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+.btn-project {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-dark);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-project:hover {
+    background-color: var(--color-primary);
+}
